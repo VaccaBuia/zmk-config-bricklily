@@ -24,7 +24,7 @@
     compatible = "pwm-leds";
 
     backlight_pwm: backlight_pwm {
-        pwms = <&pwm0 6 PWM_MSEC(1) PWM_POLARITY_NORMAL>; // P0.06 è il canale 6 su PWM0
+        pwms = <&pwm0 0 PWM_MSEC(1) PWM_POLARITY_NORMAL>; // P0.06 è il canale 6 su PWM0
         label = "Backlight";
     };
 };
