@@ -11,6 +11,8 @@ static const struct device *pwm_dev = DEVICE_DT_GET(DT_PWMS_CTLR(BACKLIGHT_NODE)
 static const uint32_t pwm_channel = DT_PWMS_CHANNEL(BACKLIGHT_NODE);
 static const uint32_t pwm_period = DT_PWMS_PERIOD(BACKLIGHT_NODE);
 
+int ret = pwm_set(pwm_dev, pwm_channel, PWM_USEC(1000), PWM_USEC(500), PWM_POLARITY_NORMAL);
+
 void backlight_set(uint8_t brightness_percent) {
     if (!device_is_ready(pwm_dev)) {
         LOG_ERR("PWM device not ready");
