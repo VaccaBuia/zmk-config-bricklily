@@ -10,6 +10,15 @@
 #include <dt-bindings/zmk/ext_power.h>
 
 / {
+    behaviors {
+        td0: tap_dance_0 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LALT>, <&kp LGUI>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -25,7 +34,7 @@
 &kp GRAVE   &kp Q  &kp W  &kp E    &kp R    &kp T                      &kp Y  &kp U    &kp I     &kp O   &kp P    &kp LBKT
 &kp LSHFT &kp A  &kp S  &kp D    &kp F    &kp G                      &kp H  &kp J    &kp K     &kp L   &kp SEMI &kp MINUS
 &kp LCTRL &kp Z  &kp X  &kp C    &kp V    &kp B  &kp RET   &kp SPACE &kp N  &kp M    &kp COMMA &kp DOT &kp FSLH &kp SQT
-                        &kp TAB &kp LGUI &kp LALT  &kp SPACE  &kp BSPC  &mo 1  &kp BSPC &kp NUBS
+                        &kp TAB &kp LGUI &td0  &kp SPACE  &kp BSPC  &mo 1  &kp BSPC &kp NUBS
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
