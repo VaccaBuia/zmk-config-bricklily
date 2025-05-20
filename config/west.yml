@@ -10,9 +10,9 @@ manifest:
     - name: zmk
       remote: zmkfirmware
       #remote: urob
-      #revision: main
+      revision: main
       #revision: backlight-support
-      revision: feat/backlight-pwm
+      #revision: feat/backlight-pwm
       import: app/west.yml
   self:
     path: config

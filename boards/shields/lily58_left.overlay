@@ -20,6 +20,15 @@
     pinctrl-names = "default", "sleep";
 };
 
+&pwmleds {
+    compatible = "pwm-leds";
+
+    backlight_pwm: backlight_pwm {
+        pwms = <&pwm0 6 PWM_MSEC(1) PWM_POLARITY_NORMAL>; // P0.06 è il canale 6 su PWM0
+        label = "Backlight";
+    };
+};
+
 / {
     backlight: pwmleds {
         compatible = "pwm-leds";
